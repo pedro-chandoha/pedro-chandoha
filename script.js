@@ -31,3 +31,32 @@ function irpf(){
         }
     }
 }
+function calculoAngulo() {
+    let catetoAdjascente = prompt("Digite o Valor do Cateto Adjascente:");
+    while(catetoAdjascente<=0 || isNaN(catetoAdjascente) || catetoAdjascente.trim === ''){
+      catetoAdjascente = prompt("Valor inválido, digite novamente");
+    }
+    catetoAdjascente = parseFloat(catetoAdjascente);
+  
+    let catetoOposto = prompt("Digite o Valor do Cateto Oposto:");
+    while(catetoOposto<=0 || isNaN(catetoOposto) || catetoOposto.trim === ''){
+      catetoOposto = prompt("Valor inválido, digite novamente");
+    }
+    catetoOposto = parseFloat(catetoOposto);
+    let Hipotenusa = prompt("Digite o Valor do Hipotenusa:");
+    while(Hipotenusa<=0 || isNaN(Hipotenusa) || Hipotenusa.trim === ''){
+      Hipotenusa = prompt("Valor inválido, digite novamente");
+    }
+    if (Hipotenusa <= catetoAdjascente || Hipotenusa <= catetoOposto) {
+      alert("Valor inválido, Minha bola não deixa")
+    }else{
+    Hipotenusa = parseFloat(Hipotenusa); 
+    let tangente, seno, cosseno;
+    tangente = catetoOposto/catetoAdjascente;
+    cosseno = catetoAdjascente/Hipotenusa;
+    seno = catetoOposto/Hipotenusa;
+    alert(`A tenguente do angulo é de ${tangente.toFixed(2)}`);
+    alert(`O cosseno do angulo é de ${cosseno.toFixed(2)}`);
+    alert(`O seno do angulo é de ${seno.toFixed(2)}`);
+  }
+  }
