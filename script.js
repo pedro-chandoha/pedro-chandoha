@@ -56,13 +56,14 @@ function calculoAngulo() {
     while (Hipotenusa <= 0 || isNaN(Hipotenusa) || Hipotenusa.trim === '') {
         Hipotenusa = prompt("Valor inválido, digite novamente");
     }
+    Hipotenusa = parseFloat(Hipotenusa);
     if (Hipotenusa <= catetoAdjascente || Hipotenusa <= catetoOposto) {
         alert("Valor inválido, Minha bola não deixa")
     } else {
         if (Hipotenusa ** 2 != catetoAdjascente ** 2 + catetoOposto ** 2) {
             alert("Valores inválidos, não é triangulo retangulo");
         } else {
-            Hipotenusa = parseFloat(Hipotenusa);
+
             let tangente, seno, cosseno;
             tangente = catetoOposto / catetoAdjascente;
             cosseno = catetoAdjascente / Hipotenusa;
