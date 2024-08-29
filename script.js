@@ -1,31 +1,40 @@
-function irpf(){
-    let salario = prompt("Digite seu salario, use . no lugar da virgula:");
-    while (salario.trim === '' || isNaN(salario)){
+function irpf() {
+    let salarioBruto = prompt("Digite seu salario, use . no lugar da virgula:");
+    while (salarioBruto.trim === '' || isNaN(salarioBruto)) {
         prompt("Valor invalido, digite novamente");
     }
-    salario = parseFloat(salario);
+    salarioBruto = parseFloat(salarioBruto);
     let salarioLiquido;
-    if(salario <= 2259.20){
+    let taxa;
+    if (salarioBruto <= 2259.20) {
         alert("Você é isento do IRPF!");
-    }else{
-        if(salario <= 2826.65){
+    } else {
+        if (salarioBruto <= 2826.65) {
             alert("Você Pagara 7,5% de IRPF!");
-            salarioLiquido = salario - (salario*0.075);
+            salarioLiquido = (salarioBruto - 2259.20) * 0.075;
             alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-        }else{
-            if(salario <= 3751.05){
+            taxa = salarioLiquido - salarioBruto;
+            alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
+        } else {
+            if (salario <= 3751.05) {
                 alert("Você pagara 15% de IRPF");
-                salarioLiquido = salario - (salario*0.15);
+                salarioLiquido = (salarioBruto - 2259.20) * 0.15;
                 alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-            }else{
-                if(salario <= 4664.68){
+                taxa = salarioLiquido - salarioBruto;
+                alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
+            } else {
+                if (salarioBruto <= 4664.68) {
                     alert("Você pagara 22,5% de IRPF");
-                    salarioLiquido = salario - (salario*0.225);
+                    salarioLiquido = (salarioBruto - 2259.20) * 0.225;
                     alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-                }else{
+                    taxa = salarioLiquido - salarioBruto;
+                    alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
+                } else {
                     alert("Você pagara 27,5% de IRPF");
-                    salarioLiquido = salario - (salario*0.275);
+                    salarioLiquido = (salarioBruto - 2259.20) * 0.275;
                     alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
+                    taxa = salarioLiquido - salarioBruto;
+                    alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
                 }
             }
         }
@@ -33,30 +42,34 @@ function irpf(){
 }
 function calculoAngulo() {
     let catetoAdjascente = prompt("Digite o Valor do Cateto Adjascente:");
-    while(catetoAdjascente<=0 || isNaN(catetoAdjascente) || catetoAdjascente.trim === ''){
-      catetoAdjascente = prompt("Valor inválido, digite novamente");
+    while (catetoAdjascente <= 0 || isNaN(catetoAdjascente) || catetoAdjascente.trim === '') {
+        catetoAdjascente = prompt("Valor inválido, digite novamente");
     }
     catetoAdjascente = parseFloat(catetoAdjascente);
-  
+
     let catetoOposto = prompt("Digite o Valor do Cateto Oposto:");
-    while(catetoOposto<=0 || isNaN(catetoOposto) || catetoOposto.trim === ''){
-      catetoOposto = prompt("Valor inválido, digite novamente");
+    while (catetoOposto <= 0 || isNaN(catetoOposto) || catetoOposto.trim === '') {
+        catetoOposto = prompt("Valor inválido, digite novamente");
     }
     catetoOposto = parseFloat(catetoOposto);
     let Hipotenusa = prompt("Digite o Valor do Hipotenusa:");
-    while(Hipotenusa<=0 || isNaN(Hipotenusa) || Hipotenusa.trim === ''){
-      Hipotenusa = prompt("Valor inválido, digite novamente");
+    while (Hipotenusa <= 0 || isNaN(Hipotenusa) || Hipotenusa.trim === '') {
+        Hipotenusa = prompt("Valor inválido, digite novamente");
     }
     if (Hipotenusa <= catetoAdjascente || Hipotenusa <= catetoOposto) {
-      alert("Valor inválido, Minha bola não deixa")
-    }else{
-    Hipotenusa = parseFloat(Hipotenusa); 
-    let tangente, seno, cosseno;
-    tangente = catetoOposto/catetoAdjascente;
-    cosseno = catetoAdjascente/Hipotenusa;
-    seno = catetoOposto/Hipotenusa;
-    alert(`A tenguente do angulo é de ${tangente.toFixed(2)}`);
-    alert(`O cosseno do angulo é de ${cosseno.toFixed(2)}`);
-    alert(`O seno do angulo é de ${seno.toFixed(2)}`);
-  }
-  }
+        alert("Valor inválido, Minha bola não deixa")
+    } else {
+        if (Hipotenusa ** 2 != catetoAdjascente ** 2 + catetoOposto ** 2) {
+            alert("Valores inválidos, não é triangulo retangulo");
+        } else {
+            Hipotenusa = parseFloat(Hipotenusa);
+            let tangente, seno, cosseno;
+            tangente = catetoOposto / catetoAdjascente;
+            cosseno = catetoAdjascente / Hipotenusa;
+            seno = catetoOposto / Hipotenusa;
+            alert(`A tenguente do angulo é de ${tangente.toFixed(2)}`);
+            alert(`O cosseno do angulo é de ${cosseno.toFixed(2)}`);
+            alert(`O seno do angulo é de ${seno.toFixed(2)}`);
+        }
+    }
+}
