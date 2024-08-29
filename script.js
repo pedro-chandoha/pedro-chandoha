@@ -60,10 +60,9 @@ function calculoAngulo() {
     if (Hipotenusa <= catetoAdjascente || Hipotenusa <= catetoOposto) {
         alert("Valor inválido, Minha bola não deixa")
     } else {
-        if (Hipotenusa ** 2 != catetoAdjascente ** 2 + catetoOposto ** 2) {
+        if ((Hipotenusa * Hipotenusa) != (catetoAdjascente * catetoAdjascente) + (catetoOposto * catetoOposto)) {
             alert("Valores inválidos, não é triangulo retangulo");
         } else {
-
             let tangente, seno, cosseno;
             tangente = catetoOposto / catetoAdjascente;
             cosseno = catetoAdjascente / Hipotenusa;
