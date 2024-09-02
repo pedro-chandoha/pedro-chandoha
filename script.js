@@ -13,27 +13,27 @@ function irpf() {
             alert("Você Pagara 7,5% de IRPF!");
             salarioLiquido = (salarioBruto - 2259.20) * 0.075;
             alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-            taxa = salarioLiquido - salarioBruto;
+            taxa = salarioBruto -salarioLiquido;
             alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
         } else {
             if (salario <= 3751.05) {
                 alert("Você pagara 15% de IRPF");
                 salarioLiquido = (salarioBruto - 2259.20) * 0.15;
                 alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-                taxa = salarioLiquido - salarioBruto;
+                taxa = salarioBruto -salarioLiquido;
                 alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
             } else {
                 if (salarioBruto <= 4664.68) {
                     alert("Você pagara 22,5% de IRPF");
                     salarioLiquido = (salarioBruto - 2259.20) * 0.225;
                     alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-                    taxa = salarioLiquido - salarioBruto;
+                    taxa = salarioBruto -salarioLiquido;
                     alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
                 } else {
                     alert("Você pagara 27,5% de IRPF");
                     salarioLiquido = (salarioBruto - 2259.20) * 0.275;
                     alert(`Seu salario liquido sera de ${salarioLiquido.toFixed(2)} Reais`);
-                    taxa = salarioLiquido - salarioBruto;
+                    taxa = salarioBruto -salarioLiquido;
                     alert(`Será pago ${taxa.toFixed(2)} Reais de imposto`);
                 }
             }
